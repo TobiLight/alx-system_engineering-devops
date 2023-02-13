@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -l iacta >> iacta
+echo "$(tail -l iacta)" >> iacta
