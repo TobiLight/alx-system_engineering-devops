@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type -empty -or -type d -empty -print | awk -F
+find . -type -printf "%f\n"
