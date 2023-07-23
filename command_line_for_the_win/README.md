@@ -11,6 +11,6 @@ NB: It will prompt for password, paste the password from your sandbox.
 - Use `put /path/to/local/working/directory/file_to_upload .` to transfer the file from my local machine to the sandbox environment.
 
 ## Files
-* **[0-first_9_tasks.png](./0-first_9_tasks.png)** - 0-first_9_tasks.png
-* **[1-next_9_tasks.PNG](./1-next_9_tasks.PNG)** - 1-next_9_tasks.png
-* **[2-next_9_tasks.PNG](./2-next_9_tasks.PNG)** - 2-next_9_tasks.png
+* **![0-first_9_tasks.png](./0-first_9_tasks.png)** - 0-first_9_tasks.png
+* **![1-next_9_tasks.PNG](./1-next_9_tasks.PNG)** - 1-next_9_tasks.png
+* **![2-next_9_tasks.PNG](./2-next_9_tasks.PNG)** - 2-next_9_tasks.png
