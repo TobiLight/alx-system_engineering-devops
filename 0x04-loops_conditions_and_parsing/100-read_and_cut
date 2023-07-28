@@ -1,4 +1,6 @@
-# Set the input file path
+#!/usr/bin/env bash
+# Displays the contents of the file `/etc/passwd`.
+#   Only displays the username, user id, and user home directory path.
 input_file="/etc/passwd"
 
 while read -r passwd; do
