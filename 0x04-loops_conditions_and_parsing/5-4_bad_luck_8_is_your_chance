@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# This script loops from 1 to 10.
+# This script loops from 1 to 10 and displays:
+#   "bad luck" for the 4th iteration
+#   "good luck" for the 8th iteration
+#   "Holberton School" for all other iterations
 
 count=1
 
