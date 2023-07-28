@@ -1,0 +1,10 @@
+# Set the input file path
+input_file="/etc/passwd"
+
+# Use IFS to set ':' as the field separator for reading /etc/passwd
+IFS=":"
+
+# Read each line of /etc/passwd and extract the required fields
+while read passwd; do
+    echo "$passwd" | cut -d ':' -f1,3,6
+done < "$input_file"
