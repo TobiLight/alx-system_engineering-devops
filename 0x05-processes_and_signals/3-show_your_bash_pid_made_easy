@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Displays the PID, along with the PID along with the process name, of processes
+# whose name contain the word bash
+
+readarray -d "" my_processes < /proc/*/status
+
+for process in "${my_processes}";
+do
+    if [[ $process == *Name:*bash* ]]; then
+        echo "you sabi ball"
+    fi
+done

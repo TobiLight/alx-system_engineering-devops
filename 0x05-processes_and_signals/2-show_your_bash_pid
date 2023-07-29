@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Displays lines containing "bash" using the previous exercise command
+# shellcheck disable=SC2009
+
+ps -u | grep "bash"
