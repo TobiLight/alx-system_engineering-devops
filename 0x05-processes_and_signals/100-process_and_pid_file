@@ -7,10 +7,10 @@
 #   Deletes the file /var/run/holbertonscript.pid and terminates upon
 #  receiving a SIGQUIT or SIGTERM.
 
-file=/var/run/holbertonscript.pid
+file=/var/run/myscript.pid
 echo $$ >> $file
 trap 'echo I hate the kill command; sudo rm $file; exit' SIGTERM
-trap 'echo Y U no love me?!' SIGINT
+trap 'echo I hate the kill command; sudo rm $file; exit' SIGINT
 trap 'sudo rm $file; exit' SIGQUIT
 while ((1)); do
     echo "To infinity and beyond"
