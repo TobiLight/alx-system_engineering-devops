@@ -1,4 +1,6 @@
-package { 'puppet-lint':
-  ensure   => '2.1.1',
-  provider => 'gem',
+# Installs a package
+
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3',
 }
