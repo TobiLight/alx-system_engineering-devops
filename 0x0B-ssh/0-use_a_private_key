@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/env bash
 
 # Specify the path to the private key
 private_key=~/.ssh/school
 
 
 # Use SSH with the private key to connect to the server
-ssh -i "$private_key" ubuntu@8.8.8.8
+ssh -i ~/.ssh/school ubuntu@8.8.8.8
