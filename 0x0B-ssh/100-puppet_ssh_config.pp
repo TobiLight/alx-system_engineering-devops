@@ -58,22 +58,16 @@ file { '/etc/ssh/ssh_config':
 		HashKnownHosts yes
 		GSSAPIAuthentication yes
 	"
-  }
+}
 
-  # Configure SSH to use the private key ~/.ssh/school
-  file_line { 'ssh_key_file':
-    path    => '/etc/ssh/ssh_config',
-    line    => '    IdentityFile ~/.ssh/school',
-    match   => '^[\s]*IdentityFile',
-    ensure  => present,
-    require => File['/etc/ssh/ssh_config'],
-  }
+file_line { 'Turn off passwd auth':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
+}
 
-  # Configure SSH to refuse password-based authentication
-  file_line { 'ssh_password_authentication':
-    path    => '/etc/ssh/ssh_config',
-    line    => '    PasswordAuthentication no',
-    match   => '^[\s]*PasswordAuthentication',
-    ensure  => present,
-    require => File['/etc/ssh/ssh_config'],
-  }
+file_line { 'Declare identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
+}
