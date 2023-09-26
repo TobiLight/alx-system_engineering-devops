@@ -1,4 +1,4 @@
-# Project: 0x0C. Web server
+# 0x0C. Web server
 
 ## Resources
 
@@ -31,3 +31,7 @@
 | 3. Redirection | [3-redirection](./3-redirection) |
 | 4. Not found page 404 | [4-not_found_page_404](./4-not_found_page_404) |
 | 5. Install Nginx web server (w/ Puppet) | [7-puppet_install_nginx_web_server.pp](./7-puppet_install_nginx_web_server.pp) |
+
+
+## Authors
+This project is authored by Oluwatobiloba Light. Feel free to reach out with any questions or suggestions. :)
