@@ -15,7 +15,7 @@ exec {'Hello':
   provider => shell,
 }
 
-exec {'"server {
+exec {'printf %s "server {
     listen 80;
     listen [::]:80 default_server;
     root   /var/www/html;
