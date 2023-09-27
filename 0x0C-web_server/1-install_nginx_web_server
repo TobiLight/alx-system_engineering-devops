@@ -3,7 +3,7 @@
 
 apt-get update
 # Install nginx
-apt-get install -y nginx
+apt-get -y install nginx
 # Allow nginx access
 ufw allow 'Nginx HTTP'
 # Display hello world upon a GET request
