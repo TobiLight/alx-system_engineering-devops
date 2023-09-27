@@ -9,4 +9,4 @@ ufw allow 'Nginx HTTP'
 # Display hello world upon a GET request
 echo "Hello World!" > /var/www/html/index.html
 # Restart nginx to apply changes
-service nginx restart
+service nginx start
