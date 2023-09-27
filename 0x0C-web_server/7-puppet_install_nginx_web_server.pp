@@ -15,16 +15,7 @@ exec {'Hello':
   provider => shell,
 }
 
-exec {"printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /var/www/html;
-    index  index.html index.htm;
-
-    location /redirect_me {
-        return 301 http://x.com/0xTobii;
-    }
-}" > /etc/nginx/sites-available/default":
+exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/blog.ehoneahobed.com\/;\\n\\t}/" /etc/nginx/sites-available/default':
   provider => shell,
 }
 
