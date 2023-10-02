@@ -15,7 +15,7 @@ printf %s "server {
     location / {
         add_header X-Served-By $hostname
     }
-}" > /etc/nginx/sites-available/default
+}" > /etc/nginx/sites-enabled/default
 
 # Check if Nginx is already running
 if [ "$(service nginx status | grep 'active')" ]; then
