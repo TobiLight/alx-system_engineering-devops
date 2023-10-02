@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-sudo apt-get update
+sudo apt-get -y update
 # Install nginx
 sudo apt-get -y install nginx
 # Allow nginx access
 sudo ufw allow 'Nginx HTTP'
 # Change persmissions to allow files to be created
 sudo mkdir -p /var/www/html
-# touch /var/www/html/index.html
 sudo chmod -R 755 /var/www
 echo "Hello World!" | sudo tee /var/www/html/index.html
-# touch /var/www/html/index.html
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 printf %s "server {
-    listen 80;
+    listen 80 default_server;
     listen [::]:80 default_server;
     add_header X-Served-By $hostname
     root   /var/www/html;
@@ -28,7 +26,6 @@ printf %s "server {
       internal;
     }
 }" > /etc/nginx/sites-available/default
-# sudo service nginx restart
 
 # Check if Nginx is already running
 if [ "$(service nginx status | grep 'active')" ]; then
@@ -38,3 +35,5 @@ else
     # Start Nginx
     sudo service nginx start
 fi
+
+# sudo service nginx restart
