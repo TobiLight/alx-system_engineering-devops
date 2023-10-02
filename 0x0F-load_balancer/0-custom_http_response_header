@@ -1,14 +1,24 @@
 #!/usr/bin/env bash
-sudo apt-get -y update
-# Install nginx
-sudo apt-get -y install nginx
-# Allow nginx access
-sudo ufw allow 'Nginx HTTP'
-# Change persmissions to allow files to be created
-sudo mkdir -p /var/www/html
-sudo chmod -R 755 /var/www
-echo "Hello World!" | sudo tee /var/www/html/index.html
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+
+# sudo apt-get -y update
+# # Install nginx
+# sudo apt-get -y install nginx
+# # Allow nginx access
+# sudo ufw allow 'Nginx HTTP'
+# # Change persmissions to allow files to be created
+# sudo mkdir -p /var/www/html
+# sudo chmod -R 755 /var/www
+# echo "Hello World!" | sudo tee /var/www/html/index.html
+# echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+apt-get update
+apt-get install -y nginx
+
+mkdir -p /var/www/html
+touch /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 printf %s "server {
     listen 80 default_server;
     listen [::]:80 default_server;
