@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
-# Configure Nginx so that its HTTP response contains a custom header
+# Configure Nginx
 
 sudo apt-get update -y
 sudo apt-get -y install nginx
-
 # configure firewall to allow request through port 80
-# sudo ufw allow 'Nginx HTTP'
-
+sudo ufw allow 'Nginx HTTP'
 server_config="/etc/nginx/sites-available/default"
 sudo sh -c "echo 'Hello World!' > /var/www/html/index.nginx-debian.html"
 sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/x.com\/0xTobii;}' $server_config
 sudo sed -i '/^}$/i \ \n\tlocation @404 {return 404 "Ceci n'\''est pas une page\\n";}' $server_config
 sudo sed -i 's/=404/@404/g' $server_config
-sudo sed -i "0,/location \/ {/s/location \/ {/&\n\t\tadd_header X-Served-By '$HOSTNAME';/" $server_config
+sudo sed -i "0,/location \/ {/s/location \/ {/&\n\t\tadd_header X-Served-By '$hostname';/" $server_config
 # restart the web server after updating the settings
 sudo service nginx restart
