@@ -1,58 +1,5 @@
 #!/usr/bin/env bash
 
-# sudo apt-get update -y
-# sudo apt-get -y install nginx
-
-# # configure firewall to allow request through port 80
-# sudo ufw allow 'Nginx HTTP'
-
-# sudo mkdir -p /var/www/html
-# sudo chmod -R 755 /var/www
-
-# #  create the index page
-# echo 'Hello World!' | sudo tee  /var/www/html/index.html
-
-# # create a webpage for error 404
-# echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-
-# replace_string="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/x.com\/OxTobii permanent;"
-# sudo sed -i "s/server_name _;/$replace_string/" /etc/nginx/sites-enabled/default
-
-# replace_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
-# sudo sed -i "s/listen 80 default_server;/$replace_string/" /etc/nginx/sites-enabled/default
-
-# # server_block="server {
-# #     listen 80;
-# #     listen [::]:80 default_server;
-# #     root   /var/www/html;
-# #     index  index.html index.htm;
-
-# # 	server_name _;
-	
-# #     add_header X-Served-By $hostname;
-
-# #     location /redirect_me {
-# #         return 301 https://x.com/OxTobii/;
-# #     }
-
-# #     error_page 404 /404.html;
-# #     location /404 {
-# #       root /var/www/html;
-# #       internal;
-# #     }
-# # }"
-# # echo "$server_bloc" | sudo tee /etc/nginx/sites-available/default > /dev/null
-# sudo service nginx restart
-
-# # service nginx restart
-# # Check if Nginx is already running
-# # if [ "$(service nginx status | grep 'active')" ]; then
-# #     # Reload Nginx configuration
-# #     sudo service nginx restart
-# # else
-# #     # Start Nginx
-# #     sudo service nginx start
-# # fi
 
 sudo apt-get update -y
 sudo apt-get -y install nginx
