@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # Configures Nginx server so that /redirect_me is redirecting to another page.
 
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y nginx
 
-echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo sh -c echo "Hello World!" > /var/www/html/index.nginx-debian.html
 printf %s "server {
     listen 80;
     listen [::]:80 default_server;
     root   /var/www/html;
-    index  index.html index.htm;
+    index  index.html index.htm index.nginx-debian.html;
 
     location /redirect_me {
         return 301 http://x.com/0xTobii;
