@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get -y install nginx
 
 # configure firewall to allow request through port 80
