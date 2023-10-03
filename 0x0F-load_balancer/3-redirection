@@ -15,5 +15,4 @@ printf %s "server {
         return 301 http://x.com/0xTobii;
     }
 }" > /etc/nginx/sites-available/default
-
 sudo service nginx restart
