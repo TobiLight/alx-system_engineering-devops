@@ -6,7 +6,7 @@ sudo apt-get -y install haproxy
 
 server_config=\
 "
-frontend  tobii-frontend
+frontend tobii-frontend
         bind *:80
         mode http
         default_backend tobii-backend
