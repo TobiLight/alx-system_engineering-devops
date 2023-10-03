@@ -9,15 +9,15 @@ sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
 # Restart nginx to apply changes
 # sudo service nginx reload
-
+sudo service nginx restart
 # Check if Nginx is already running
-if [ "$(service nginx status | grep 'active')" ]; then
-    # Reload Nginx configuration
-    sudo service nginx restart
-else
-    # Start Nginx
-    sudo service nginx start
-fi
+# if [ "$(service nginx status | grep 'active')" ]; then
+#     # Reload Nginx configuration
+#     sudo service nginx restart
+# else
+#     # Start Nginx
+#     sudo service nginx start
+# fi
 # apt-get update
 # apt-get -y install nginx
 # ufw allow 'Nginx HTTP'
