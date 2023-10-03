@@ -6,16 +6,16 @@ sudo apt-get install -y nginx
 
 sudo mkdir -p /var/www/html
 sudo touch /var/www/html/index.html
-echo "Hello World!" > /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sudo touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 sudo printf %s "server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
+    add_header X-Served-By $hostname;
     root   /var/www/html;
-    index  index.html index.htm;
+    index  index.html index.htm index.nginx-debian.html;
 
     location /redirect_me {
         return 301 https://x.com/0xTobii;
