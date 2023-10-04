@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Debug Nginx installation not running on port 80
+
+# Remove sites-enabled/default file
+sudo rm /etc/nginx/sites-enabled/default
+
+# Create a symlink to sites-available/default 
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart Nginx
+sudo service nginx restart
