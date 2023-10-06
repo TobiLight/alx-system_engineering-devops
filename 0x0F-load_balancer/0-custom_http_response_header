@@ -12,6 +12,7 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 # Add X-Served-By in the header
 sudo sed -i 's/server_name _;/server_name _;\n\tadd_header X-Served-By \$hostname;\n\t/g' /etc/nginx/sites-enabled/default
 
+
 # sudo printf %s "server {
 #     listen 80 default_server;
 #     listen [::]:80 default_server;
