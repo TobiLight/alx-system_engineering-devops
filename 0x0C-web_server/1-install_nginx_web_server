@@ -9,7 +9,7 @@ sudo ufw allow 'Nginx HTTP'
 # Display hello world upon a GET request
 echo "Hello World!" | sudo tee /var/www/html/index.html
 # Configure server block to display same content on www.uncletobi.tech and uncletobi.tech
-sed -i 's/server_name example.com;/server_name uncletobi.tech www.uncletobi.tech;/g' /etc/nginx/sites-available/your-config-file
+sed -i 's/server_name example.com;/server_name _;/g' /etc/nginx/sites-available/
 
 
 # Check if Nginx is already running
