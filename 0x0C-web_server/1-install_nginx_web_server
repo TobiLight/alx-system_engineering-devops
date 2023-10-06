@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that configures a new Ubuntu machine
+# Script that installs and configures Nginx on a new Ubuntu machine
 
 sudo apt-get update -y
 # Install nginx
@@ -9,7 +9,16 @@ sudo ufw allow 'Nginx HTTP'
 # Display hello world upon a GET request
 echo "Hello World!" | sudo tee /var/www/html/index.html
 # Configure server block to display same content on www.uncletobi.tech and uncletobi.tech
-sudo sed -i 's/server_name example.com;/server_name _;/g' /etc/nginx/sites-available/default
+# sudo sed -i 's/server_name example.com;/server_name _;/g' /etc/nginx/sites-available/default
+
+sudo printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /var/www/html;
+    index  index.html index.htm;
+
+    server_name _;
+}" > /etc/nginx/sites-enabled/default
 
 # Check if Nginx is already running
 if [ "$(service nginx status | grep 'active')" ]; then
