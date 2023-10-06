@@ -4,24 +4,25 @@
 sudo apt-get update
 # Install nginx
 sudo apt-get install -y nginx
-# Allow nginx access
-sudo ufw allow 'Nginx HTTP'
+
 echo "Hello World!" | sudo tee /var/www/html/index.html
 replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/x.com\/0xTobii permanent;"
-sudo sed -i "s/server_name _;/$replacement/" /etc/nginx/sites-available/default
+
+# For some reason, the line below is causing this error -> "rewrite" directive is not allowed here in /etc/nginx/sites-enabled/default
+# sudo sed -i "s/server_name _;/$replacement/" /etc/nginx/sites-available/default
 
 # You can also use the below if you like stress :p
-# printf %s "server {
-#     listen 80;
-#     listen [::]:80 default_server;
-#     root   /var/www/html;
-#     index  index.html index.htm;
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /var/www/html;
+    index  index.html index.htm;
 
-#     server_name _;
+    server_name _;
 
-#     location /redirect_me {
-#         return 301 http://x.com/0xTobii;
-#     }
-# }" > /etc/nginx/sites-available/default
+    location /redirect_me {
+        return 301 http://x.com/0xTobii;
+    }
+}" > /etc/nginx/sites-available/default
 
 sudo service nginx restart
