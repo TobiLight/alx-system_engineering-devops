@@ -7,10 +7,9 @@ sudo apt-get install -y nginx
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
 replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/x.com\/0xTobii permanent;"
-# For some reason, the line below is causing this error -> "rewrite" directive is not allowed here in /etc/nginx/sites-enabled/default
 sudo sed -i "s/server_name _;/$replacement/" /etc/nginx/sites-enabled/default
 
-# You can also use the below if you like stress :p
+# You can also use the below if you like stress :p. PS: For some reason, the line below is causing this error -> "rewrite" directive is not allowed here in /etc/nginx/sites-enabled/default
 # sudo printf %s "server {
 #     listen 80;
 #     listen [::]:80 default_server;
