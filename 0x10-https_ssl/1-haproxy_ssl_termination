@@ -42,17 +42,13 @@ frontend tobii-frontend-http
         mode http
         http-request set-header X-Forwarded-Proto http
         default_backend tobii-backend
+
 frontend tobii-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/www.uncletobi.tech.pem
         http-request set-header X-Forwarded-Proto https
-        acl letsencrypt-acl path_beg /.well-known/acme-challenge
-        use_backend letsencrypt-backend if letsencrypt-acl
         default_backend tobii-backend
+
 backend tobii-backend
         balance roundrobin
-        redirect scheme https if !{ ssl_fc }
         server 284283-web-01 204.236.240.195:80 check
         server 284283-web-02 34.239.253.9:80 check
-
-backend letsencrypt-backend
-        server letsencrypt 127.0.0.1:54321
