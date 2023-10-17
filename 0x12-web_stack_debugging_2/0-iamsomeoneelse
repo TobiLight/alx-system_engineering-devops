@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+username=$1
+
+if [ $# -ge 1 ]; then
+	sudo -u "$username" whoami
+fi
