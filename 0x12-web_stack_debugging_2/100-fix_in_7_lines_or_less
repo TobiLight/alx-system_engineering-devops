@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if [ $# -ge 1 ]; then
+	sudo -u "$1" whoami
+fi
