@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Script that runs Nginx as user 'nginx'
 
+# Stop nginx in case it is already running
 sudo service nginx stop
 # Change the user in the nginx configuration
 echo "user nginx;" >>/etc/nginx/nginx.conf
