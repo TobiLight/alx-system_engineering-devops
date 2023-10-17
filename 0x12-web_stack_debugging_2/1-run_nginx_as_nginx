@@ -5,7 +5,7 @@ sudo apt-get -y update
 # Install nginx
 sudo apt-get -y install nginx
 # Change the user in the nginx configuration
-sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
+sed -i 's/user www-data/user nginx/' /etc/nginx/nginx.conf
 # Update the listening port in a server block
 sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 # File permissions for nginx.conf
