@@ -13,12 +13,11 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         userID = sys.argv[1]
         response = requests.\
-            get("https://jsonplaceholder.typicode.com/users/{}".format(userID))
+            get("https://jsonplaceholder.typicode.com/users/{}".
+                format(userID))
         todo_response = requests.\
             get("https://jsonplaceholder.typicode.com/todos")
-        completed_todos = requests.\
-            get("https://jsonplaceholder.typicode.com/todos?userId={}&completed={}"
-                .format())
+
         try:
             response.raise_for_status()
             todo_response.raise_for_status()
