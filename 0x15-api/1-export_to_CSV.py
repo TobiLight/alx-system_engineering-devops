@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-# File: 0-gather_data_from_an_API.py
+# File: 1-export_to_CSV.py
 # Author: Oluwatobiloba Light
 """
 Returns information about an employee's TODO list progress for a
-given employee ID.
+given employee ID and exports the data in the CSV format.
 """
 import requests
 import sys
@@ -31,9 +31,9 @@ if __name__ == "__main__":
             # raise an error if it occurs
             todos.raise_for_status()
             user = user.json()
-            total_todos = len(todos.json())
-            completed_todos = len(completed.json())
             completed = completed.json()
+            total_todos = len(todos.json())
+            completed_todos = len(completed)
 
             print("Employee {} is done with tasks({}/{}):".
                   format(user['name'], completed_todos, total_todos))
