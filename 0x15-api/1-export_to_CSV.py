@@ -5,9 +5,9 @@
 Returns information about an employee's TODO list progress for a
 given employee ID and exports data in CSV format.
 """
+import csv
 import requests
 import sys
-import csv
 
 
 if __name__ == "__main__":
