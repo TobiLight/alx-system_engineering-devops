@@ -30,10 +30,10 @@ if __name__ == "__main__":
             with open(filename, 'w',  newline='', encoding="utf-8") as\
                     file:
                 writer = csv.writer(file, quoting=csv.QUOTE_NONNUMERIC)
-                for data in todos:
-                    writer.writerow([str(data['userId']),
+                for todo in todos:
+                    writer.writerow([str(todo['userId']),
                                      str(user['username']),
-                                     str(data['completed']),
-                                     str(data['title'])])
+                                     str(todo['completed']),
+                                     str(todo['title'])])
         except requests.exceptions.RequestException as e:
             pass
