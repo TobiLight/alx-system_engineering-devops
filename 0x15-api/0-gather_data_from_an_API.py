@@ -64,7 +64,8 @@ if __name__ == "__main__":
 #             for todo in todos:
 #                 if str(todo['userId']) == userID:
 #                     total += 1
-#                 if str(todo['userId']) == userID and todo['completed'] is True:
+#                 if str(todo['userId']) == userID and todo['completed'] is\
+#                         True:
 #                     completed += 1
 #                     todos_title.append(todo['title'])
 #             print("Employee {} is done with tasks({}/{}):".
