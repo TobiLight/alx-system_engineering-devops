@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """
-this doc for module
+Queries the Reddit API and returns a list containing the
+titles of all hot articles for a given subreddit.
 """
 import requests
 
 
 def recurse(subreddit, after=None):
-    """method doc"""
+    """
+    Returns a list containing the titles of all hot articles
+    for a given subreddit
+    """
     headers = {"User-Agent": "MyCustomUserAgent/1.0"}
     params = {"after": after}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
