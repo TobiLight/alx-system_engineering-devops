@@ -3,10 +3,9 @@
 Using reddit's API
 """
 import requests
-after = None
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, after=None):
     """returning top ten post titles recursively"""
     headers = {"User-Agent": "MyCustomUserAgent/1.0"}
     params = {"after": after}
