@@ -1,4 +1,4 @@
-# Postmortem: Unplanned Service Disruption - Surviving the Glitchpocalypse
+# Postmortem: Unplanned Service Disruption
 
 ![oops](https://media.giphy.com/media/XGVXt08iHVArvIElcw/giphy.gif)
 
