@@ -9,10 +9,8 @@ Greetings, fellow tech adventurers! Today, we embark on a journey through the tr
 ## The Glitchy Odyssey: A Summary
 * Duration:
 	* Our unexpected detour unfolded from 14:30 to 17:45 (GMT) on November 11, 2023. Forget tea time; it was troubleshooting time.
-
 * Impact:
 	* Picture this: a quarter of our users tapping their fingers impatiently as the digital hamster powering our servers took a coffee break. Slow loading times, intermittent errors – it was like a cosmic game of hide and seek with our beloved platform.
-
 * Root Cause:
 	* Hold your laughter – the villain of our tale was a misconfigured load balancer. Yes, the unsung hero (or villain?) of the digital world, playing favorites with our servers and causing a traffic tantrum.
 
